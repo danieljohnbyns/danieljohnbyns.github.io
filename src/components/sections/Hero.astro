@@ -1,0 +1,61 @@
+---
+import Terminal from '../ui/Terminal.astro';
+---
+
+<section class="relative min-h-screen flex items-center justify-center px-4 pt-16">
+  <div class="absolute inset-0 bg-gradient-to-b from-secondary/5 via-transparent to-transparent pointer-events-none" />
+
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <div class="mb-8">
+      <p class="text-sm font-mono text-secondary mb-3 animate-fade-in">
+        Hello, I'm
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-4 animate-slide-up">
+        Daniel John <span class="text-gradient">Baynosa</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-text-secondary font-body max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.1s">
+        <span class="font-heading text-secondary">System Architect</span>
+        <span class="mx-2 opacity-40">|</span>
+        <span>AI Agent Engineer</span>
+        <span class="mx-2 opacity-40">|</span>
+        <span>Software Developer</span>
+      </p>
+    </div>
+
+    <div class="max-w-xl mx-auto mb-10 animate-slide-up" style="animation-delay: 0.2s">
+      <Terminal
+        lines={[
+          '$ whoami',
+          'danieljohnbyns — System Architect, AI Agent Engineer',
+          '$ pwd',
+          '/home/danieljohn/portfolio',
+          '$ ls -la projects/',
+          'cyra/   iOSAS/   RapCap/   tapang-sarap/   snipboard/',
+          '$ cat about.md',
+          'Building scalable systems. Exploring AI. Open source advocate.',
+        ]}
+      />
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 animate-slide-up" style="animation-delay: 0.3s">
+      <a
+        href="#projects"
+        class="px-6 py-3 rounded-lg bg-secondary text-white font-heading text-sm font-semibold hover:glow-hover transition-all duration-300"
+      >
+        View Projects
+      </a>
+      <a
+        href="#contact"
+        class="px-6 py-3 rounded-lg border border-white/20 text-text-primary font-heading text-sm font-semibold hover:border-secondary/50 hover:text-secondary transition-all duration-300"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>

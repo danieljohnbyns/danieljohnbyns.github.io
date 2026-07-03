@@ -1,0 +1,39 @@
+---
+import Terminal from '../ui/Terminal.astro';
+---
+
+<section id="education" class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-heading font-bold mb-2">
+      <span class="text-secondary">#</span> Education
+    </h2>
+    <div class="w-12 h-0.5 bg-secondary mb-8" />
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="p-6 rounded-xl border border-white/10 bg-surface/50 backdrop-blur-sm">
+        <h3 class="text-lg font-heading font-semibold text-text-primary mb-1">
+          Bachelor of Science in Information Technology
+        </h3>
+        <p class="text-secondary font-medium text-sm mb-1">Colegio de Montalban</p>
+        <p class="text-text-secondary text-sm font-mono">Sep 2022 – Jun 2026</p>
+        <p class="text-text-secondary text-sm mt-3">
+          Government-funded institution in Rodriguez, Rizal. Comprehensive curriculum covering
+          software development, networking, database management, and system analysis.
+        </p>
+      </div>
+
+      <Terminal
+        lines={[
+          '$ cat /etc/education',
+          'Institution: Colegio de Montalban',
+          'Degree: BS Information Technology',
+          'Period: 2022 - 2026',
+          'Focus: Full-stack development,',
+          '       system architecture, AI',
+          '$ echo "GPA: TBD"',
+          'GPA: TBD (still counting...)',
+        ]}
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "skills": ["TypeScript", "JavaScript", "Kotlin", "Python", "Rust", "C++", "PHP", "SQL"]
+    },
+    {
+      "name": "Frontend",
+      "skills": ["React", "React Native", "Astro", "Tailwind CSS", "Vite", "HTML/CSS"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Node.js", "Express", "Supabase", "PostgreSQL", "REST APIs", "JWT"]
+    },
+    {
+      "name": "Desktop & Mobile",
+      "skills": ["Tauri", "Electron", "Expo", "React Native"]
+    },
+    {
+      "name": "AI & Tools",
+      "skills": ["Google Gemini", "GitHub Actions", "Docker", "Git", "npm"]
+    },
+    {
+      "name": "Concepts",
+      "skills": ["System Architecture", "CI/CD", "DevOps", "Automated Testing", "Open Source"]
+    }
+  ]
+}

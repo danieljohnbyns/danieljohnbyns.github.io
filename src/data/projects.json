@@ -1,0 +1,69 @@
+[
+  {
+    "title": "cyra",
+    "subtitle": "Can You Really Assist?",
+    "description": "Real-time AI voice assistant powered by Google Gemini. Enables natural conversations and file system interaction through dynamic tool execution.",
+    "tech": ["TypeScript", "Gemini AI", "Node.js"],
+    "links": {
+      "github": "https://github.com/cyra-ai/cyra"
+    },
+    "featured": true,
+    "year": 2025
+  },
+  {
+    "title": "iOSAS Suite",
+    "subtitle": "Integrated Office of Student Affairs and Services",
+    "description": "Multi-app ecosystem for Colegio de Montalban — API backend, React Native mobile app, Tauri desktop apps for staff and admin, and project website. 56 releases on admin-staff.",
+    "tech": ["Node.js", "React Native", "Tauri", "Supabase", "Express"],
+    "links": {
+      "github": "https://github.com/iOSAS-CdM"
+    },
+    "featured": true,
+    "year": 2025
+  },
+  {
+    "title": "RapCap",
+    "subtitle": "Rapid Capture Photobooth",
+    "description": "Desktop photobooth software for events. Import image templates, adjust frames, capture photos, and save. Built with Electron.",
+    "tech": ["Electron", "JavaScript", "Webpack"],
+    "links": {
+      "github": "https://github.com/danieljohnbyns/RapCap"
+    },
+    "featured": true,
+    "year": 2024
+  },
+  {
+    "title": "tapang-sarap",
+    "subtitle": "IoT Temperature Monitor",
+    "description": "Mobile app connected to hardware for real-time temperature monitoring. Set thresholds and receive notifications.",
+    "tech": ["React Native", "Node.js", "Express", "IoT"],
+    "links": {
+      "github": "https://github.com/danieljohnbyns/tapang-sarap"
+    },
+    "featured": false,
+    "year": 2024
+  },
+  {
+    "title": "snipboard",
+    "subtitle": "npm Package",
+    "description": "Publish npm package (@danieljohnbyns/snipboard) for uploading images to snipboard.io. Automated CI/CD testing via GitHub Actions.",
+    "tech": ["TypeScript", "npm", "GitHub Actions"],
+    "links": {
+      "github": "https://github.com/danieljohnbyns/snipboard",
+      "demo": "https://www.npmjs.com/package/@danieljohnbyns/snipboard"
+    },
+    "featured": false,
+    "year": 2024
+  },
+  {
+    "title": "System-Architecture-Course",
+    "subtitle": "Self-built Curriculum",
+    "description": "A work-in-progress course for becoming a proficient System Architect. Divided into phases covering different skill sets and knowledge areas.",
+    "tech": ["Documentation", "Architecture"],
+    "links": {
+      "github": "https://github.com/danieljohnbyns/System-Architecture-Course"
+    },
+    "featured": false,
+    "year": 2025
+  }
+]

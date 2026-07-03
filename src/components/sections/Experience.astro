@@ -1,0 +1,15 @@
+---
+import Timeline from '../ui/Timeline.astro';
+import experience from '../../data/experience.json';
+---
+
+<section id="experience" class="py-20 px-4 bg-surface/30">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-heading font-bold mb-2">
+      <span class="text-secondary">#</span> Experience
+    </h2>
+    <div class="w-12 h-0.5 bg-secondary mb-8" />
+
+    <Timeline items={experience} />
+  </div>
+</section>

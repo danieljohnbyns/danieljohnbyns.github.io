@@ -1,0 +1,44 @@
+---
+import Terminal from '../ui/Terminal.astro';
+---
+
+<section id="about" class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-heading font-bold mb-2">
+      <span class="text-secondary">#</span> About
+    </h2>
+    <div class="w-12 h-0.5 bg-secondary mb-8" />
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="space-y-4 text-text-secondary leading-relaxed">
+        <p>
+          Highly motivated Information Technology student at <span class="text-text-primary font-medium">Colegio de Montalban</span>
+          with hands-on experience in full-stack software development. Strong technical expertise in modern web technologies,
+          containerization, and system architecture.
+        </p>
+        <p>
+          I build cross-platform application suites and actively explore real-time AI and machine learning integrations.
+          I advocate for <span class="text-text-primary font-medium">Managed Open Source</span> business models
+          and custom Linux development.
+        </p>
+        <p>
+          Currently a <span class="text-secondary font-medium">Developer Intern at TaoCrowd</span>,
+          contributing to real-estate web solutions and automated testing.
+        </p>
+      </div>
+
+      <Terminal
+        lines={[
+          '$ ./profile.sh',
+          'Name: Daniel John Baynosa',
+          'Role: System Architect',
+          'Location: Rodriguez, Rizal, PH',
+          'Status: BSIT @ Colegio de Montalban',
+          'Intern: TaoCrowd, Inc.',
+          '$ echo $INTERESTS',
+          'System Architecture  AI/ML  Open Source',
+        ]}
+      />
+    </div>
+  </div>
+</section>
