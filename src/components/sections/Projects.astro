@@ -1,24 +1,29 @@
 ---
 import Card from '../ui/Card.astro';
 import projects from '../../data/projects.json';
+
+const featured = projects.filter((p) => p.featured);
 ---
 
-<section id="projects" class="py-20 px-4">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-heading font-bold mb-2">
-      <span class="text-secondary">#</span> Projects
-    </h2>
-    <div class="w-12 h-0.5 bg-secondary mb-8" />
-
-    <div class="grid md:grid-cols-2 gap-5">
-      {projects.map((p) => (
+<section class="py-20 bg-surface border-y border-border">
+  <div class="container-main">
+    <div class="flex items-center justify-between mb-12">
+      <div>
+        <h2 class="section-title mb-0">Featured Projects</h2>
+        <p class="text-text-secondary text-lg mt-2">Selected work I'm proud of.</p>
+      </div>
+      <a href="/projects" class="link-arrow hidden sm:flex">
+        View all
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featured.map((p) => (
         <Card
           title={p.title}
-          subtitle={p.subtitle}
-          description={p.description}
+          description={`${p.subtitle ? p.subtitle + ' — ' : ''}${p.description}`}
           tech={p.tech}
           links={p.links}
-          featured={p.featured}
         />
       ))}
     </div>

@@ -1,297 +1,774 @@
-# Design Document — Daniel John Baynosa
+# Daniel John Design System
 
-> **Role:** System Architect | AI Agent Engineer | Software Developer
-> **Location:** Rodriguez, Rizal, Philippines
-> **Website:** https://danieljohnbyns.online
+Version 1.0
 
----
-
-## 1. Brand Identity
-
-### Core Values
-- **Clarity through architecture** — systems should be well-structured, documented, and scalable.
-- **Practical innovation** — leverage AI and modern tooling to solve real problems, not chase hype.
-- **Managed Open Source** — build transparently, share intentionally, sustain responsibly.
-- **Cross-platform fluency** — web, desktop, mobile, and IoT are not silos.
-
-### Personality
-- Analytical but approachable
-- Self-taught rigor meets academic foundation
-- "I tend to overcomplicate things" — but delivers
-
-### Tagline Concepts
-- *Architecting systems. Engineering intelligence.*
-- *From architecture to deployment — end to end.*
+> A design system focused on clarity, engineering excellence, and minimal interfaces.
 
 ---
 
-## 2. Color Palette
+# Design Philosophy
 
-A professional, tech-forward palette with warmth from Filipino heritage.
+The design language follows four principles:
 
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `--primary` | `#1a1a2e` | Deep navy — backgrounds, headers |
-| `--secondary` | `#e94560` | Vibrant coral — accents, CTAs, highlights |
-| `--accent` | `#0f3460` | Midnight blue — secondary surfaces |
-| `--surface` | `#16213e` | Dark card/panel backgrounds |
-| `--text-primary` | `#eaeaea` | Primary text on dark |
-| `--text-secondary` | `#a0a0b0` | Muted text, metadata |
-| `--success` | `#2ecc71` | Positive indicators |
-| `--warning` | `#f39c12` | Warning / attention |
-| `--glow` | `#e94560` | Subtle glow effects on interactive elements |
+- Engineering over decoration
+- Readability before aesthetics
+- Components over pages
+- Calm interfaces with strategic emphasis
 
-### Why this palette
-The deep navy-to-coral scheme reflects:
-- Professionalism and depth (navy)
-- Energy and passion for code (coral)
-- Modern developer tooling aesthetic (dark mode first)
+The goal is to make every project look like it belongs to the same ecosystem.
+
+The visual identity should feel like:
+
+- GitHub
+- Linear
+- Vercel
+- Raycast
+- Notion
+- Stripe Documentation
+
+while maintaining a unique deep-indigo personality.
 
 ---
 
-## 3. Typography
+# Brand Personality
 
-| Element | Font | Weight | Fallback |
-|---------|------|--------|----------|
-| Headings | `JetBrains Mono` | 700, 600 | `monospace` |
-| Body | `Inter` | 400, 500 | `sans-serif` |
-| Code / Tech | `JetBrains Mono` | 400, 500 | `monospace` |
-| Labels / Captions | `Inter` | 500 | `sans-serif` |
+Keywords
 
-### Scale
+- Technical
+- Professional
+- Modern
+- Confident
+- Calm
+- Minimal
+- Intelligent
+- Organized
+
+Avoid
+
+- Bright gradients
+- Loud animations
+- Heavy shadows
+- Glassmorphism
+- Skeuomorphism
+
+---
+
+# Color Palette
+
+## Primary
+
+Deep Indigo
 
 ```
---text-xs:   0.75rem   (12px)
---text-sm:   0.875rem  (14px)
---text-base: 1rem      (16px)
---text-lg:   1.125rem  (18px)
---text-xl:   1.25rem   (20px)
---text-2xl:  1.5rem    (24px)
---text-3xl:  1.875rem  (30px)
---text-4xl:  2.25rem   (36px)
---text-5xl:  3rem      (48px)
+#1B1464
 ```
 
-### Rationale
-- **JetBrains Mono** for headings and code — aligns with developer identity, pairs technical credibility with readability.
-- **Inter** for body — highly legible at all sizes, designed for screens.
+Used for
+
+- Hero sections
+- Buttons
+- Navigation
+- Footer
+- Icons
+- Active states
 
 ---
 
-## 4. Layout & Spacing
+## Accent
 
-### Grid
-- 12-column grid with 24px gutter
-- Max container width: `1200px`
-- Breakpoints: `640px` / `768px` / `1024px` / `1280px`
-
-### Spacing Scale
+Royal Indigo
 
 ```
---space-1:  4px
---space-2:  8px
---space-3:  12px
---space-4:  16px
---space-5:  24px
---space-6:  32px
---space-8:  48px
---space-10: 64px
---space-12: 80px
+#3E2D8F
 ```
 
-### Page Structure
-- Full-bleed hero section with animated terminal / architectural diagram
-- Consistent section padding: `--space-12` top and bottom
-- Cards with subtle border `1px solid rgba(255,255,255,0.06)` and rounded corners `12px`
+Hover states
+
+Links
+
+Interactive elements
 
 ---
 
-## 5. Design Philosophy
+## Background
 
-### Dark Mode First
-The portfolio defaults to dark mode. This matches developer tooling conventions and the chosen color palette. A light mode toggle may be added later but is **not** a priority.
+White
 
-### Minimal but Expressive
-- Clean layouts with generous whitespace.
-- Use of subtle glow and gradient effects (not flat, not overdone).
-- Interactive code snippets and terminal emulators embedded in project showcases.
-
-### Motion
-- Subtle fade-in-up animations on scroll (`IntersectionObserver`).
-- Hover states: scale(1.02) + increased glow on cards.
-- Page transitions: fade + slight slide (`50ms` ease-out).
-- Terminal cursor blink for hero typewriter effect.
-
-### Accessibility
-- All color combinations pass WCAG AA contrast ratios.
-- Focus indicators visible on all interactive elements.
-- `prefers-reduced-motion` respected.
-
----
-
-## 6. Content Architecture
-
-### Pages / Sections
-
-| Section | Purpose |
-|---------|---------|
-| **Hero** | Typewriter intro, role, CTA to projects |
-| **About** | Professional summary + personal philosophy |
-| **Experience** | Timeline of work history (TaoCrowd, Freelance, EnticeAds) |
-| **Projects** | Featured work — cyra, iOSAS, RapCap, tapang-sarap, snipboard, System-Architecture-Course |
-| **Skills** | Tag cloud / matrix of technologies |
-| **Education** | Colegio de Montalban — BSIT 2022–2026 |
-| **Contact** | Form + links to GitHub, LinkedIn, email |
-
-### Project Card Schema
-
-```json
-{
-  "title": "cyra",
-  "subtitle": "Can You Really Assist?",
-  "description": "Real-time AI voice assistant powered by Google Gemini",
-  "tech": ["TypeScript", "Gemini AI", "Node.js"],
-  "links": {
-    "github": "https://github.com/cyra-ai/cyra",
-    "demo": null
-  },
-  "featured": true,
-  "year": 2025
-}
+```
+#FFFFFF
 ```
 
 ---
 
-## 7. Technology Stack
+## Surface
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | React (Vite) or Astro |
-| Language | TypeScript |
-| Styling | CSS Modules / Tailwind CSS |
-| Animation | Framer Motion / CSS animations |
-| Deployment | Vercel or Cloudflare Pages |
-| Analytics | Plausible or Umami (self-hosted) |
-| Forms | Formspree or custom API endpoint |
-| Fonts | JetBrains Mono + Inter (Google Fonts) |
+Light Gray
 
-### Why these choices
-- **Astro** would be ideal for a content-heavy portfolio (zero JS by default, islands architecture).
-- **React + Vite** if more interactivity is needed (e.g., embedded terminal, live demos).
-- **Tailwind CSS** aligns with rapid prototyping and the design token system above.
-- **Vercel/Cloudflare** — free tier, global CDN, excellent DX.
+```
+#FAFAFC
+```
+
+Cards
+
+Sections
+
+Containers
 
 ---
 
-## 8. File Structure (Proposed)
+## Border
 
 ```
-/
-├── public/
-│   ├── favicon.svg
-│   ├── og-image.png
-│   └── resume/
-│       └── daniel-john-baynosa-resume.pdf
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.astro
-│   │   │   ├── Footer.astro
-│   │   │   └── Layout.astro
-│   │   ├── sections/
-│   │   │   ├── Hero.astro
-│   │   │   ├── About.astro
-│   │   │   ├── Experience.astro
-│   │   │   ├── Projects.astro
-│   │   │   ├── Skills.astro
-│   │   │   ├── Education.astro
-│   │   │   └── Contact.astro
-│   │   └── ui/
-│   │       ├── Button.astro
-│   │       ├── Card.astro
-│   │       ├── Tag.astro
-│   │       ├── Terminal.astro
-│   │       └── Timeline.astro
-│   ├── data/
-│   │   ├── projects.json
-│   │   ├── experience.json
-│   │   └── skills.json
-│   ├── styles/
-│   │   ├── tokens.css
-│   │   ├── base.css
-│   │   └── utilities.css
-│   ├── pages/
-│   │   └── index.astro
-│   └── utils/
-│       └── animations.ts
-├── Design.md
-├── package.json
-├── tsconfig.json
-├── astro.config.mjs
-└── tailwind.config.mjs
+#E7E7EC
 ```
 
 ---
 
-## 9. Featured Projects Detail
+## Divider
 
-### cyra — AI Voice Assistant
-- **Stack:** TypeScript, Google Gemini AI, Node.js
-- **Highlights:** Real-time voice conversation, file system tool execution, MIT-licensed
-- **Why it matters:** Demonstrates AI integration, async architecture, and open-source contribution
-
-### iOSAS Suite (7 repos)
-- **Stack:** Node.js/Express, React Native (Expo), Tauri + React, Supabase
-- **Components:** API backend, mobile app, administrative-staff desktop, superadmin desktop, website
-- **Highlights:** 56 releases on admin-staff, full student affairs lifecycle management
-- **Why it matters:** System architecture at scale — multi-app ecosystem with shared API
-
-### RapCap — Rapid Capture Photobooth
-- **Stack:** Electron, JavaScript, Webpack
-- **Highlights:** Image template import, frame adjustment, photo capture, 3 GitHub stars
-- **Why it matters:** Desktop application engineering, real-time media processing
-
-### tapang-sarap — IoT Temperature Monitor
-- **Stack:** React Native (Expo), Node.js/Express, hardware integration
-- **Highlights:** Real-time temperature monitoring, threshold notifications
-- **Why it matters:** Full-stack + IoT, hardware-software bridge
-
-### snipboard — npm Package
-- **Stack:** TypeScript
-- **Highlights:** Published on npm (`@danieljohnbyns/snipboard`), automated CI/CD tests
-- **Why it matters:** Package publishing discipline, API design
-
-### System-Architecture-Course
-- **Stack:** Documentation / Markdown
-- **Highlights:** Self-built curriculum for system architecture proficiency
-- **Why it matters:** Teaching and knowledge sharing, depth in architectural thinking
+```
+#D8D8E2
+```
 
 ---
 
-## 10. Performance Targets
+## Text
 
-| Metric | Target |
-|--------|--------|
-| Lighthouse Performance | ≥ 95 |
-| Lighthouse Accessibility | 100 |
-| First Contentful Paint (FCP) | < 1.0s |
-| Largest Contentful Paint (LCP) | < 1.5s |
-| Cumulative Layout Shift (CLS) | < 0.05 |
-| Total Bundle Size (JS) | < 100KB |
-| Total Page Weight | < 500KB |
+Primary
 
----
+```
+#202124
+```
 
-## 11. Future Considerations
+Secondary
 
-- **Blog / writing section** — publish system architecture deep-dives
-- **Interactive terminal component** — showcase cyra-like interactions in-browser
-- **Dark/light mode toggle** — based on `prefers-color-scheme`
-- **Internationalization** — English + Filipino (Tagalog)
-- **RSS feed** for blog content
-- **Guestbook / comments** — lightweight, serverless
-- **Particle / network graph background** — subtle architectural diagram aesthetic
+```
+#5F6368
+```
+
+Muted
+
+```
+#8C8C95
+```
 
 ---
 
-*Design document v1.0 — reflecting Daniel John Baynosa's professional identity as a System Architect, AI Agent Engineer, and Full-Stack Developer. Built from resume, GitHub profile, and LinkedIn data.*
+## Success
+
+```
+#2E7D32
+```
+
+---
+
+## Warning
+
+```
+#ED6C02
+```
+
+---
+
+## Error
+
+```
+#D32F2F
+```
+
+---
+
+# Typography
+
+Primary Font
+
+Poppins
+
+Fallback
+
+```
+system-ui
+```
+
+---
+
+## Heading Scale
+
+H1
+
+56px
+
+700
+
+H2
+
+40px
+
+700
+
+H3
+
+32px
+
+600
+
+H4
+
+24px
+
+600
+
+H5
+
+20px
+
+600
+
+---
+
+## Body
+
+Large
+
+18px
+
+Regular
+
+16px
+
+Small
+
+14px
+
+Caption
+
+12px
+
+---
+
+# Spacing
+
+Base Unit
+
+```
+8px
+```
+
+Spacing Scale
+
+```
+4
+8
+12
+16
+24
+32
+40
+48
+64
+80
+96
+128
+```
+
+---
+
+# Border Radius
+
+Small
+
+```
+8px
+```
+
+Cards
+
+```
+16px
+```
+
+Buttons
+
+```
+10px
+```
+
+Hero Images
+
+```
+24px
+```
+
+---
+
+# Shadows
+
+Small
+
+```
+0 2px 8px rgba(0,0,0,.05)
+```
+
+Medium
+
+```
+0 8px 24px rgba(0,0,0,.08)
+```
+
+Avoid large blurry shadows.
+
+---
+
+# Layout
+
+Maximum Width
+
+```
+1200px
+```
+
+Reading Width
+
+```
+720px
+```
+
+Container Padding
+
+Desktop
+
+```
+32px
+```
+
+Tablet
+
+```
+24px
+```
+
+Mobile
+
+```
+16px
+```
+
+---
+
+# Grid
+
+Desktop
+
+12 Columns
+
+Tablet
+
+8 Columns
+
+Mobile
+
+4 Columns
+
+Gap
+
+24px
+
+---
+
+# Buttons
+
+## Primary
+
+Filled
+
+Background
+
+Primary Indigo
+
+Text
+
+White
+
+Radius
+
+10px
+
+Height
+
+44px
+
+Hover
+
+Slightly lighter
+
+Shadow
+
+None
+
+---
+
+## Secondary
+
+Outline
+
+Border
+
+Primary
+
+Background
+
+White
+
+Hover
+
+Light Indigo
+
+---
+
+## Ghost
+
+Transparent
+
+Hover
+
+Light Gray
+
+---
+
+# Cards
+
+Radius
+
+16px
+
+Border
+
+1px
+
+Padding
+
+24px
+
+Background
+
+White
+
+Shadow
+
+Small
+
+Cards should always contain
+
+- icon
+- title
+- description
+- action links
+
+---
+
+# Navigation
+
+Height
+
+72px
+
+White background
+
+Minimal
+
+Only active page has underline
+
+Support button always highlighted
+
+---
+
+# Hero
+
+Split layout
+
+Left
+
+Headline
+
+Role
+
+Description
+
+Social Links
+
+CTA
+
+Right
+
+Large project showcase
+
+Device mockups
+
+Dashboard screenshots
+
+---
+
+# Icons
+
+Style
+
+Outline
+
+Simple
+
+Consistent stroke
+
+Recommended
+
+- Lucide
+- Heroicons
+
+Avoid
+
+Filled icons unless brand logos.
+
+---
+
+# Project Cards
+
+Structure
+
+```
+Image
+
+Title
+
+Description
+
+Technology
+
+Source
+
+Demo
+```
+
+Height should remain consistent.
+
+---
+
+# Forms
+
+Inputs
+
+Height
+
+48px
+
+Radius
+
+10px
+
+Border
+
+1px
+
+Placeholder
+
+Muted
+
+Focus
+
+Primary Indigo Border
+
+---
+
+# Tags
+
+Used for
+
+Skills
+
+Tech stack
+
+Categories
+
+Style
+
+Rounded pill
+
+Background
+
+Light Gray
+
+Text
+
+Primary
+
+---
+
+# Motion
+
+Animation Duration
+
+150–250ms
+
+Hover
+
+Lift
+
+Scale
+
+1.02
+
+Page transitions
+
+Fade
+
+Avoid excessive motion.
+
+---
+
+# Images
+
+Use
+
+Dashboard screenshots
+
+Terminal screenshots
+
+Code snippets
+
+System diagrams
+
+Avoid
+
+Generic stock photos.
+
+---
+
+# Illustration Style
+
+Simple
+
+Flat
+
+Engineering themed
+
+Minimal
+
+Use subtle indigo accents.
+
+---
+
+# Code Snippets
+
+Background
+
+```
+#111827
+```
+
+Radius
+
+12px
+
+Font
+
+JetBrains Mono
+
+---
+
+# Technology Logos
+
+Monochrome where possible.
+
+Preferred order
+
+Node
+
+React
+
+TypeScript
+
+Tauri
+
+Expo
+
+Docker
+
+Linux
+
+GitHub
+
+PostgreSQL
+
+MongoDB
+
+Redis
+
+OpenAI
+
+---
+
+# Content Voice
+
+Writing should be
+
+Professional
+
+Direct
+
+Technical
+
+Avoid marketing buzzwords.
+
+Example
+
+❌
+
+"I create amazing digital experiences."
+
+✅
+
+"I design and build scalable software systems focused on maintainability and performance."
+
+---
+
+# Portfolio Identity
+
+Personal Brand
+
+System Architect
+
+Core Statement
+
+> Building software systems that scale—from desktop applications to cloud-native platforms.
+
+---
+
+# Accessibility
+
+Minimum contrast
+
+4.5:1
+
+Keyboard accessible
+
+Visible focus states
+
+Minimum touch target
+
+44px
+
+Animations respect prefers-reduced-motion
+
+---
+
+# Future Expansion
+
+This design system should support:
+
+- Portfolio
+- Blog
+- Documentation
+- SaaS Dashboards
+- Mobile Apps
+- Desktop Apps
+- Open Source Projects
+
+The goal is to maintain a single recognizable engineering brand across every product.

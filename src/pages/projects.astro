@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/ui/Card.astro';
+import projects from '../data/projects.json';
+---
+
+<Layout title="Projects — Daniel John Baynosa" activePage="projects">
+  <section class="py-20">
+    <div class="container-main">
+      <div class="mb-12">
+        <h1 class="section-title">Projects</h1>
+        <p class="text-text-secondary text-lg">
+          Open source work, academic systems, and experimental tools.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <Card
+            title={p.title}
+            description={`${p.subtitle ? p.subtitle + ' — ' : ''}${p.description}`}
+            tech={p.tech}
+            links={p.links}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

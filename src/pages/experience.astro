@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Timeline from '../components/ui/Timeline.astro';
+import experience from '../data/experience.json';
+---
+
+<Layout title="Experience — Daniel John Baynosa">
+  <section class="py-20">
+    <div class="container-main">
+      <div class="mb-12">
+        <h1 class="section-title">Experience</h1>
+        <p class="text-text-secondary text-lg">
+          My professional journey in software development and engineering.
+        </p>
+      </div>
+      <div class="max-w-3xl">
+        <Timeline items={experience} />
+      </div>
+    </div>
+  </section>
+</Layout>

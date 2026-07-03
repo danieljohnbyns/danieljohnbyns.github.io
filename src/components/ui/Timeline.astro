@@ -13,25 +13,33 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ol class="relative border-l border-white/10 ml-3 space-y-8">
-  {items.map((item) => (
-    <li class="relative pl-6">
-      <div class="absolute left-0 top-1.5 -translate-x-1/2 w-3 h-3 rounded-full bg-secondary border-2 border-primary" />
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-        <h3 class="text-base font-heading font-semibold text-text-primary">
-          {item.title}
-        </h3>
-        <span class="text-xs font-mono text-text-secondary">{item.period}</span>
+<ol class="relative">
+  {items.map((item, idx) => (
+    <li class={`relative pl-8 ${idx < items.length - 1 ? 'pb-10' : ''}`}>
+      {idx < items.length - 1 && (
+        <div class="absolute left-[11px] top-4 bottom-0 w-px bg-divider" />
+      )}
+      <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 border-primary bg-white flex items-center justify-center">
+        <div class="w-2 h-2 rounded-full bg-primary" />
       </div>
-      <p class="text-sm font-medium text-secondary mb-2">{item.company}</p>
-      <ul class="space-y-1">
-        {item.highlights.map((h) => (
-          <li class="text-sm text-text-secondary flex items-start gap-2">
-            <span class="mt-1.5 w-1 h-1 rounded-full bg-text-secondary shrink-0" />
-            {h}
-          </li>
-        ))}
-      </ul>
+
+      <div class="card">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+          <h3 class="text-lg font-heading font-semibold text-text-primary">
+            {item.title}
+          </h3>
+          <span class="text-sm text-text-muted font-medium">{item.period}</span>
+        </div>
+        <p class="text-sm font-semibold text-primary mb-3">{item.company}</p>
+        <ul class="space-y-1.5">
+          {item.highlights.map((h) => (
+            <li class="text-sm text-text-secondary flex items-start gap-2.5">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-divider shrink-0" />
+              {h}
+            </li>
+          ))}
+        </ul>
+      </div>
     </li>
   ))}
 </ol>

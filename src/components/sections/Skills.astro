@@ -1,26 +1,17 @@
 ---
-import Tag from '../ui/Tag.astro';
 import skillsData from '../../data/skills.json';
 ---
 
-<section id="skills" class="py-20 px-4 bg-surface/30">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-heading font-bold mb-2">
-      <span class="text-secondary">#</span> Skills
-    </h2>
-    <div class="w-12 h-0.5 bg-secondary mb-8" />
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skillsData.categories.map((cat) => (
-        <div class="p-5 rounded-xl border border-white/10 bg-surface/50 backdrop-blur-sm">
-          <h3 class="text-sm font-heading font-semibold text-secondary mb-3 uppercase tracking-wider">
-            {cat.name}
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            {cat.skills.map((s) => <Tag label={s} />)}
-          </div>
-        </div>
-      ))}
+<section class="py-20">
+  <div class="container-main">
+    <div class="text-center mb-12">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="text-text-secondary text-lg">Tools and technologies I work with regularly.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+      {skillsData.categories.flatMap((cat) =>
+        cat.skills.map((s) => <span class="tag text-sm px-4 py-2">{s}</span>)
+      )}
     </div>
   </div>
 </section>
